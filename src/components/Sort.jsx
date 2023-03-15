@@ -9,7 +9,6 @@ export const Sort = () => {
         { name: 'алфавиту (DESC)'},
         { name: 'алфавиту (ASC)'},
     ];
-
     return (
     <div className="sort">
       <div className="sort__label">

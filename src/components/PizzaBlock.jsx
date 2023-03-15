@@ -1,24 +1,32 @@
-import React from 'react';
+import {useState} from 'react';
 
-export const PizzaBlock = (props) => {
-  const typeNames = ['тонкое', 'традиционное'];
+export const PizzaBlock = ({pizzaInfo}) => {
+    const {imageUrl , title , price , sizes , types} = pizzaInfo
+    const typeNames = ['тонкое', 'традиционное'];
 
-  return (
+    const [activeType , setActiveType] = useState(0)
+    const [activeSize , setActiveSize] = useState(0)
+
+    return (
       <>
         <div className="pizza-block-wrapper">
             <div className="pizza-block">
-                <img className="pizza-block__image" src={props} alt="Pizza" />
-                <h4 className="pizza-block__title">Example</h4>
+                <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
+                <h4 className="pizza-block__title">{title}</h4>
                 <div className="pizza-block__selector">
                     <ul>
-                        <li key='1' className='active'>Example</li>
+                        {types.map((type) => (
+                            <li onClick={() => setActiveType(type)} key={type} className={activeType === type ? 'active' : ''}>{typeNames[type]}</li>
+                        ))}
                     </ul>
                     <ul>
-                        <li key='2' className='active'>Example</li>
+                        {sizes.map((size,i) => (
+                            <li onClick={() => setActiveSize(i)} key={i} className={activeSize === i ? 'active' : ''}>{size}</li>
+                        ))}
                     </ul>
                 </div>
                 <div className="pizza-block__bottom">
-                    <div className="pizza-block__price">Price</div>
+                    <div className="pizza-block__price">{price}</div>
                     <button className="button button--outline button--add">
                         <svg
                         width="12"
@@ -38,5 +46,5 @@ export const PizzaBlock = (props) => {
             </div>
         </div>
     </>
-  );
+    );
 };
