@@ -1,14 +1,21 @@
-import React from 'react';
+import {useState} from 'react';
 
-export const Sort = () => {
+export const Sort = ({value , changeState}) => {
+    const [open , setOpen] = useState(false)
     const sortList = [
-        { name: 'популярности (DESC)'},
-        { name: 'популярности (ASC)'},
-        { name: 'цене (DESC)'},
-        { name: 'цене (ASC)'},
-        { name: 'алфавиту (DESC)'},
-        { name: 'алфавиту (ASC)'},
+        { name: 'популярности DESC' , sortProperty: 'rating'},
+        { name: 'популярности ASC' , sortProperty: '-rating'},
+        { name: 'цене DESC' , sortProperty: 'price'},
+        { name: 'цене ASC' , sortProperty: '-price'},
+        { name: 'алфавиту DESC' , sortProperty: 'title'},
+        { name: 'алфавиту ASC' , sortProperty: '-title'},
     ];
+
+    const onClickSortItem = (sortItem) => {
+        changeState(sortItem)
+        setOpen(!open)
+    }
+
     return (
     <div className="sort">
       <div className="sort__label">
@@ -24,18 +31,22 @@ export const Sort = () => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span>Example</span>
+        <span onClick={() => setOpen(!open)}>{value.name}</span>
       </div>
-      <div className="sort__popup">
-        <ul>
-            { sortList.map((sortItem, i) => (
-                    <li key={i} className='active'>
-                        {sortItem.name}
-                    </li>
-                ))
-            }
-        </ul>
-      </div>
+        {
+            open && (
+                <div className="sort__popup">
+                    <ul>
+                        { sortList.map((sortItem , i) => (
+                            <li onClick={() => onClickSortItem(sortItem)} key={i} className={sortItem.name === value.name ? 'active' : ''}>
+                                {sortItem.name}
+                            </li>
+                        ))
+                        }
+                    </ul>
+                </div>
+            )
+        }
     </div>
     );
 }
