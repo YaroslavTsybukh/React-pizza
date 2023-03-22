@@ -1,12 +1,14 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 
 import {Categories} from "../components/Categories";
 import {Sort} from "../components/Sort";
 import {Skeleton} from "../components/PizzaBlock/Skeleton";
 import {PizzaBlock} from "../components/PizzaBlock";
 import {Pagination} from "../components/Pagination"
+import {SearchContext} from "../App";
 
-export const Homepage = ({searchValue}) => {
+export const Homepage = () => {
+    const {searchValue} = useContext(SearchContext)
     const [pizzas , setPizzas] = useState([])
     const [isLoading , setIsLoading] = useState(true)
     const [categoryIndex , setCategoryIndex] = useState(0)
