@@ -1,0 +1,44 @@
+@import "../../../scss/variables";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 24px;
+  height: 24px;
+  border: 1px solid $orange-400;
+  cursor: pointer;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.list {
+  @extend .pagination;
+  margin: 0 10px;
+}
+
+.listItem {
+  width: 24px;
+  height: 24px;
+  border: 1px solid $orange-400;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 50%;
+  line-height: normal;
+
+  &Active{
+    background-color: $orange-400;
+  }
+
+  &:hover {
+    @extend .listItemActive;
+    transition: 0.5s ease-in-out ;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

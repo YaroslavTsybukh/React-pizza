@@ -1,0 +1,36 @@
+@import "../../../scss/variables";
+
+.form {
+  display: grid;
+  grid-template-areas:
+  "name email"
+  "password password"
+  "button button";
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.inputName {
+  composes: input from "../FormForEntry/FormForEntry.module.scss";
+  grid-area: name;
+}
+
+.inputEmail {
+  composes: input from "../FormForEntry/FormForEntry.module.scss";
+  grid-area: email;
+}
+
+.inputPassword {
+  composes: input from "../FormForEntry/FormForEntry.module.scss";
+  grid-area: password;
+}
+
+.button {
+  grid-area: button;
+  background-color: $orange-400;
+  color: $white-100;
+  border-radius: 20px;
+  border: 1px solid $orange-400;
+  cursor: pointer;
+  height: 35px;
+}

@@ -1,0 +1,30 @@
+@import "src/scss/variables";
+
+.welcomeText {
+  font-size: 20px;
+  margin-bottom: 70px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.list {
+  background-color: $gray-100;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.listItem {
+  margin-bottom: 30px;
+  cursor: pointer;
+  display: block;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+

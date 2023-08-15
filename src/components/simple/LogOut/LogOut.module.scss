@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.button {
+  composes: button from "../../smart/MyInfo/MyInfo.module.scss";
+  width: 100%;
+}

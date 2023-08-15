@@ -1,0 +1,32 @@
+@import "../../../scss/variables";
+
+.modalWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(38, 34, 34, 0.7);;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modalBlock {
+    background: $white-100;
+    width: 500px;
+    height: 370px;
+    border-radius: 30px;
+    padding: 0 20px;
+
+    .cross {
+      width: 13px;
+      height: 13px;
+      cursor: pointer;
+      margin: 20px;
+    }
+  }
+}
+.inputPassword {
+  composes: input from "../FormForEntry/FormForEntry.module.scss"
+}

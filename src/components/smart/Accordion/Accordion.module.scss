@@ -1,0 +1,28 @@
+@import "../../../scss/variables";
+
+.accordion {
+  .accordionHeading {
+    position: relative;
+    padding: 10px 0;
+    margin-bottom: 10px;
+
+    &::after , &::before {
+      content: "";
+      width: 10px;
+      height: 1px;
+      background-color: $black-100;
+      position: absolute;
+      right: 10px;
+      top: 20px;
+      transition: transform 0.3s ease 0s ;
+    }
+
+    &::after {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .accordionActive::after {
+    transform: rotate(0deg);
+  }
+}

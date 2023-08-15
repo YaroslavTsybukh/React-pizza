@@ -1,0 +1,47 @@
+@import "../../../scss/variables";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block {
+  background: $white-100;
+  width: 500px;
+  height: auto;
+  border-radius: 30px;
+  padding: 0 20px 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.input {
+  height: 35px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.link {
+  font-size: 12px;
+  display: inline-block;
+  cursor: pointer;
+;
+
+  &:after {
+    content: "";
+    height: 1px;
+    display: block;
+    background-color: $orange-400;
+    width: 100%;
+  }
+}
+
+.errorMessage {
+  color: $red-200;
+}

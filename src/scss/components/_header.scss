@@ -1,10 +1,10 @@
 @import '../variables';
 
 .header {
-  border-bottom: 1px solid $gray-line;
+  border-bottom: 1px solid $gray-200;
   padding: 40px 0;
 
-  .container {
+  &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,7 +22,7 @@
     }
 
     h1 {
-      color: #181818;
+      color: $black-100;
       font-size: 24px;
       letter-spacing: 1%;
       text-transform: uppercase;
@@ -30,7 +30,13 @@
     }
 
     p {
-      color: #7b7b7b;
+      color: $gray-500;
     }
+  }
+
+  &__profile {
+    display: block;
+    text-align: center;
+    cursor: pointer;
   }
 }

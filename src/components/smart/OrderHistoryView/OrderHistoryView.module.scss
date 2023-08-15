@@ -1,0 +1,16 @@
+@import "src/scss/variables";
+
+.table {
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-color: $black-400;
+}
+
+.th , .td {
+  padding: 20px;
+}
+
+.showOrder {
+  text-decoration: underline;
+  cursor: pointer;
+}

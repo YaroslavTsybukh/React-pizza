@@ -1,0 +1,26 @@
+@import "../../../scss/variables";
+
+.crumbs {
+  display: flex;
+
+  .crumb {
+    font-size: 18px;
+    display: inline-block;
+
+    &::after {
+      content: "/";
+      margin: 0 15px;
+    }
+
+    &:last-child {
+      a {
+        pointer-events: none;
+        color: $gray-700;
+      }
+
+      &::after {
+        content: "";
+      }
+    }
+  }
+}

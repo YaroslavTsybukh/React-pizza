@@ -2,7 +2,7 @@
 
 .button {
   display: inline-block;
-  background-color: $orange;
+  background-color: $orange-400;
   border-radius: 30px;
   padding: 10px 20px;
   min-width: 100px;
@@ -10,11 +10,10 @@
   cursor: pointer;
   transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
   border: 1px solid transparent;
-  @include noselect();
 
   &,
   span {
-    color: #fff;
+    color: $white-100;
   }
 
   i,
@@ -25,11 +24,11 @@
   }
 
   &:hover {
-    background-color: darken($orange, 8%);
+    background-color: darken($orange-400, 8%);
   }
 
   &:active {
-    background-color: darken($orange, 12%);
+    background-color: darken($orange-400, 12%);
     transform: translateY(1px);
   }
 
@@ -45,45 +44,45 @@
   }
 
   &--black {
-    background-color: $black;
+    background-color: $black-300;
 
     &:hover,
     &:active {
-      background-color: lighten($color: $black, $amount: 10);
+      background-color: lighten($color: $black-300, $amount: 10);
     }
   }
 
   &--outline {
-    background-color: #fff;
-    border-color: $orange;
+    background-color: $white-100;
+    border-color: $orange-400;
     &,
     span {
-      color: $orange;
+      color: $orange-400;
     }
 
     svg {
       path {
-        fill: $orange;
+        fill: $orange-400;
       }
     }
 
     &:hover {
-      background-color: $orange;
+      background-color: $orange-400;
 
       &,
       span {
-        color: #fff;
+        color: $white-100;
       }
 
       svg {
         path {
-          fill: #fff;
+          fill: $white-100;
         }
       }
     }
 
     &:active {
-      background-color: darken($orange, 8%);
+      background-color: darken($orange-400, 8%);
     }
   }
 
@@ -107,16 +106,16 @@
 
     &:hover {
       i {
-        background-color: #fff;
-        color: $orange;
+        background-color: $white-100;
+        color: $orange-400;
       }
     }
 
     i {
       display: inline-block;
       border-radius: 30px;
-      background-color: $orange;
-      color: #fff;
+      background-color: $orange-400;
+      color: $white-100;
       font-weight: 600;
       width: 22px;
       height: 22px;
